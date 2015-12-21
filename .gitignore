@@ -73,3 +73,6 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+
+# Include dlls if they're in the ClearScript.V8 directory
+!*ClearScript.V8/*.dll
