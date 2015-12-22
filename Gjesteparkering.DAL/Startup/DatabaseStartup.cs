@@ -12,6 +12,9 @@ namespace Gjesteparkering.DAL
         public void Start()
         {
             _log.Info("Database startup");
+            // Reference dlls that are indirectly referenced and not always included in build
+            var x = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
+
             var context = new GjesteparkeringContext();
             var initializeDomain = new CreateDatabaseIfNotExists<GjesteparkeringContext>();
             var initializeMigrations = new MigrateDatabaseToLatestVersion<GjesteparkeringContext, Configuration>();
