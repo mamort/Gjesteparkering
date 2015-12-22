@@ -6,7 +6,7 @@ using Castle.Windsor;
 
 namespace Gjesteparkering.Framework
 {
-    public abstract class AbstractWindsorInstaller
+    public abstract class AbstractWindsorInstaller : IWindsorInstaller
     {
         protected IWindsorContainer Container { get; set; }
 
