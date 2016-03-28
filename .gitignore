@@ -74,5 +74,8 @@ _[Ss]cripts
 *.ncrunchsolution
 *.dot[Cc]over
 
+node_modules
+*npm-debug.log
+
 # Include dlls if they're in the ClearScript.V8 directory
 !*ClearScript.V8/*.dll

@@ -21,10 +21,8 @@ namespace Gjesteparkering.DAL
             var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
 
             var context = new GjesteparkeringContext();
-            var initializeDomain = new CreateDatabaseIfNotExists<GjesteparkeringContext>();
             var initializeMigrations = new MigrateDatabaseToLatestVersion<GjesteparkeringContext, Configuration>();
 
-            initializeDomain.InitializeDatabase(context);
             initializeMigrations.InitializeDatabase(context);
         }
 
