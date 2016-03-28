@@ -125,8 +125,14 @@
     <None Include="log4net.config" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
+    <Content Include="Scripts\Gjesteparkering\actions.js" />
+    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\container.js" />
+    <Content Include="Scripts\Gjesteparkering\rootReducer.js" />
+    <Content Include="Scripts\rootReducer.js" />
     <Content Include="Scripts\stateSelectors.js" />
-    <Content Include="Scripts\components\view.jsx" />
+    <Content Include="Scripts\ReduxExample\components\view.jsx" />
+    <Content Include="Scripts\Gjesteparkering\app.jsx" />
+    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\registrer.jsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,10 +144,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\init.jsx" />
-    <Content Include="Scripts\actions\actions.js" />
+    <Content Include="Scripts\ReduxExample\actions\actions.js" />
     <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\containers\container.js" />
-    <Content Include="Scripts\reducers\reducers.js" />
+    <Content Include="Scripts\ReduxExample\containers\container.js" />
+    <Content Include="Scripts\ReduxExample\reducers\reducers.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -168,9 +174,7 @@
       <Name>Gjesteparkering.Framework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\ReduxExample\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
