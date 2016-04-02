@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { parkeringsplassNameChanged, createParkeringsplass } from './actions'
 import View from './registrer.jsx'
 
 const mapStateToProps = (state) => {
@@ -9,6 +10,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        onNameChanged: function(input) {
+            dispatch(parkeringsplassNameChanged(input.target.value)); 
+        },
+
+        onParkeringsplassCreate: function() {
+            dispatch(createParkeringsplass());
+        }
     }
 }
 

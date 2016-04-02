@@ -25,8 +25,8 @@ const view = function () {
     render(
           <Provider store={store}>
             <Router history={history}> 
-                <Route path="/Gjesteparkering" component={GjesteparkeringApp}>
-                    <Route path="/Registrer-parkeringsplass" component={RegistrerParkeringsplass}/>
+                <Route path='/Gjesteparkering' component={GjesteparkeringApp}>
+                    <Route path='Registrer-parkeringsplass' component={RegistrerParkeringsplass}/>
                 </Route>      
              </Router>
            </Provider>,

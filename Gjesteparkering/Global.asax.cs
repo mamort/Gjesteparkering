@@ -19,6 +19,7 @@ namespace Gjesteparkering
             _log.Info("Application start");
             WindsorService.Initialize();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 
         protected void Session_Start(object sender, EventArgs e)

@@ -84,5 +84,5 @@ function compile(bundle, filename) {
         //.pipe(_if(isProduction, buffer()))
         //.pipe(_if(isProduction, uglify()))
         .pipe(gulp.dest(buildDir + '/'))
-        .on('end', () => console.log("Compiled: " + filename));
+        .on('end', () => gutil.log("Compiled: " + filename));
 }
