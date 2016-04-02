@@ -1,14 +1,22 @@
 var source = require('vinyl-source-stream');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var browserify = require('browserify');
-var watchify = require('watchify');
 var notify = require("gulp-notify");
-var babelify = require("babelify");
+var args = require('yargs').argv;
+var babelify = require('babelify');
+var browserify = require('browserify');
 
 var scriptsDir = './scripts';
 var buildDir = './build';
 var mainFile = "app.js";
+
+var isProduction = !!args.production;
+var watchify = !isProduction ? require('watchify') : {};
+
+var vendorLibs = [
+    'react', 'react-dom', 'isomorphic-fetch', 'jquery', 'redux', "react-router-redux", "react-router",
+    'babel-polyfill', 'react-redux', 'redux-thunk', 'humps'
+];
 
 
 function handleErrors() {
@@ -20,41 +28,61 @@ function handleErrors() {
     this.emit('end'); // Keep gulp from hanging on this task
 }
 
+gulp.task('default', function () {
+    return scripts(false);
+});
 
-// Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
-function buildScript(file, watch) {
 
-    var props = {
-        entries: ['./scripts/' + file],
-        debug: true,
-        cache: {},
-        packageCache: {},
-        fullPaths: true,
-        extensions: ['.js', '.json', '.es6', 'jsx']
-    };
+gulp.task('watch-js', function () {
+    return scripts(true);
+});
 
-    var bundler = watch ? watchify(browserify(props)) : browserify(props);
-    bundler = bundler.transform(babelify, { presets: ["es2015", "react"] });
-
-    function rebundle() {
-        var stream = bundler.bundle();
-        return stream.on('error', handleErrors)
-        .pipe(source(file))
-        .pipe(gulp.dest(buildDir + '/'));
-    }
-    bundler.on('update', function () {
-        rebundle();
-        gutil.log('Rebundle...');
-    });
-    return rebundle();
+function createBundler(watch, options) {
+    var bundler = watch ? watchify(browserify(options)) : browserify(options);
+    return bundler.transform(babelify, { presets: ["es2015", "react"] });
 }
 
 
-gulp.task('build', function () {
-    return buildScript(mainFile, false);
-});
+function scripts(watch) {
+    var libBundlerOptions = browserify({
+        debug: !isProduction
+    });
 
+    var libBundler = createBundler(false, libBundlerOptions);
 
-gulp.task('default', ['build'], function () {
-    return buildScript(mainFile, true);
-});
+    libBundler.require(vendorLibs);
+    compile(libBundler, 'vendor.bundle.js');
+
+    const options = {
+        entries: ['./scripts/' + mainFile],
+        debug: !isProduction,
+        cache: {}, // required for watchify
+        packageCache: {}, // required for watchify
+        fullPaths: watch, // required to be true only for watchify
+        extensions: ['.js', '.json', '.es6', 'jsx']
+    };
+
+    var bundler = createBundler(watch, options);
+
+    bundler.external(vendorLibs);
+
+    if (watch) {
+
+        bundler.on('update', function () {
+            return compile(bundler, mainFile);
+        });
+    };
+
+    return compile(bundler, mainFile);
+}
+
+function compile(bundle, filename) {
+    return bundle
+        .bundle()
+        .on('error', handleErrors)
+        .pipe(source(filename))
+        //.pipe(_if(isProduction, buffer()))
+        //.pipe(_if(isProduction, uglify()))
+        .pipe(gulp.dest(buildDir + '/'))
+        .on('end', () => console.log("Compiled: " + filename));
+}
