@@ -161,6 +161,8 @@
     <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\container.js" />
     <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\reducer.js" />
     <Content Include="Scripts\Gjesteparkering\reducer.js" />
+    <Content Include="Scripts\Gjesteparkering\Shared\api\api.js" />
+    <Content Include="Scripts\Gjesteparkering\Shared\api\actions.js" />
     <Content Include="Scripts\Gjesteparkering\Signup\container.js" />
     <Content Include="Scripts\rootReducer.js" />
     <Content Include="Scripts\stateSelectors.js" />
@@ -199,6 +201,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import View from './login.jsx'
-import { loginEmailChanged, loginPasswordChanged } from './actions'
+import { loginEmailChanged, loginPasswordChanged, login } from './actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -16,6 +16,10 @@ const mapDispatchToProps = (dispatch) => {
 
         onPasswordChange: (input) => {
             dispatch(loginPasswordChanged(input.target.value)); 
+        },
+
+        onLogin:() => {
+            dispatch(login()); 
         }
     }
 }

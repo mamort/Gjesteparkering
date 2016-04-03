@@ -23,7 +23,7 @@ const view = function () {
   ));
 
     const history = syncHistoryWithStore(browserHistory, store);
-    history.listen(location => loginHandler(location));
+    history.listen(location => loginHandler(location, store));
 
     render(
           <Provider store={store}>

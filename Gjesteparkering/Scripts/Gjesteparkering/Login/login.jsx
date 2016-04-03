@@ -4,7 +4,7 @@ import Constants from '../constants'
 
 import { connect } from 'react-redux';
 
-const Login = ({ onEmailChange, onPasswordChange }) => (
+const Login = ({ onEmailChange, onPasswordChange, onLogin }) => (
    
             <div>
                 <div className="login">
@@ -42,7 +42,7 @@ const Login = ({ onEmailChange, onPasswordChange }) => (
           
                     <fieldset className="buttons">
                         <div className="field">
-                            <input id="signin-button" type="button" className="signin-btn" value="Logg inn" />
+                            <input id="signin-button" type="button" className="signin-btn" value="Logg inn" onClick={onLogin} />
                         </div>
                     </fieldset>
                 </form>

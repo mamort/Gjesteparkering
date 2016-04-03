@@ -2,6 +2,7 @@
 using System.IO;
 using System.Web.Http;
 using System.Web.Routing;
+using System.Web.Security;
 using Gjesteparkering.Framework;
 using log4net;
 using log4net.Config;
@@ -20,6 +21,9 @@ namespace Gjesteparkering
             WindsorService.Initialize();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            //MembershipCreateStatus status;
+            //Membership.CreateUser("Test", "Test123456!", "test@test.com", "question", "answer", true, out status);
         }
 
         protected void Session_Start(object sender, EventArgs e)

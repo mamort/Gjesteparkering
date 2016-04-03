@@ -1,3 +1,4 @@
 export default {
-    RoutePrefix: '/Gjesteparkering/'
+    RoutePrefix: '/Gjesteparkering/',
+    ServiceUrl: 'http://localhost/Gjesteparkering/api'
 }
