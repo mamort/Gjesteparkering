@@ -144,28 +144,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\normalize.css" />
     <Content Include="index.html" />
     <Content Include="gulpfile.js" />
+    <Content Include="Content\css\style.css" />
     <None Include="log4net.config" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="Scripts\Gjesteparkering\constants.js" />
     <Content Include="Scripts\Gjesteparkering\actions.js" />
-    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\actions.js" />
-    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\container.js" />
-    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\reducer.js" />
+    <Content Include="Scripts\Gjesteparkering\Login\actions.js" />
+    <Content Include="Scripts\Gjesteparkering\Login\reducer.js" />
+    <Content Include="Scripts\Gjesteparkering\Login\utils.js" />
+    <Content Include="Scripts\Gjesteparkering\Login\container.js" />
+    <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\actions.js" />
+    <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\container.js" />
+    <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\reducer.js" />
     <Content Include="Scripts\Gjesteparkering\reducer.js" />
+    <Content Include="Scripts\Gjesteparkering\Signup\container.js" />
     <Content Include="Scripts\rootReducer.js" />
     <Content Include="Scripts\stateSelectors.js" />
     <Content Include="Scripts\ReduxExample\components\view.jsx" />
     <Content Include="Scripts\Gjesteparkering\app.jsx" />
-    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\registrer.jsx" />
+    <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\registrer.jsx" />
     <Content Include="readme.txt" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\web.config" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Scripts\Gjesteparkering\Login\login.jsx" />
+    <Content Include="Scripts\Gjesteparkering\Signup\signup.jsx" />
+    <Content Include="Scripts\Gjesteparkering\App\app.jsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -212,7 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

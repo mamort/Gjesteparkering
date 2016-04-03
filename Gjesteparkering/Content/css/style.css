@@ -1,0 +1,73 @@
+body {
+    min-width: 980px;
+    font-family: 'Droid Sans','Helvetica Neue',Helvetica,Arial,FreeSans,sans-serif;
+}
+
+h1,h2,h3,h4 {
+    font-weight:normal
+}
+
+a {
+    color: #2d85ca;
+    text-decoration: none;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.field-input {
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    margin: 0 8px 10px 0;
+    padding: 5px 8px;
+}
+
+a:hover {
+    text-decoration:underline
+}
+
+#root {
+    margin: 0 auto;
+    width: 960px;
+}
+
+/* Login */
+.login form {
+    width: 50%;
+}
+
+.login h1 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+
+.login .signup {
+    font-size: 0.5em;
+}
+
+#field-forgot-password {
+    float: right;
+    font-size: 0.8em;
+    margin-bottom: 0;
+    margin-top: 4px;
+}
+
+.login .field {
+    margin-bottom: 10px;
+}
+
+.login .field-input {
+    padding: 12px 15px;
+    font-size: 1.4em;
+}
+
+.field label {
+    padding-top: 6px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Signup */

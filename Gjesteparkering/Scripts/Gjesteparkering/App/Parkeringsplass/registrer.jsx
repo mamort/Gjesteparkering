@@ -7,7 +7,7 @@ const Registrer = ({ onNameChanged, onParkeringsplassCreate }) => (
        <form>
            <label>Navn: </label> 
            <input type='text' onChange={onNameChanged} />
-           <input type='button' onClick={onParkeringsplassCreate} />
+           <input type='button' value='Registrer parkeringsplass' onClick={onParkeringsplassCreate} />
         </form>
   </div>
 )  
