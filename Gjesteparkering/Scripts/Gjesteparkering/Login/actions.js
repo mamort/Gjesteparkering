@@ -32,20 +32,22 @@ export const login = () => {
 
         var url = Constants.ServiceUrl + '/login';
         var body = { username, password, rememberMe: true }
-        apiPost(dispatch, url, (response) => onReceiveData(dispatch, response, username), onError, body);
+        apiPost(dispatch, url, (response) => onReceiveData(response, username), onError, body);
     }
 }
 
-function onReceiveData(dispatch, response, username) {
-    response.json().then(function(data) {
-        console.log(JSON.stringify(data));
-        if (response.status === 200 && data.Success) {
-            dispatch(userLoggedIn(username));       
-            browserHistory.push('/Gjesteparkering');
-        }
-    });
+function onReceiveData(response, username) {
+    return (dispatch) => {
+        return response.json().then(function(data) {
+            console.log(JSON.stringify(data));
+            if (response.status === 200 && data.Success) {
+                dispatch(userLoggedIn(username));       
+                browserHistory.push('/Gjesteparkering');
+            }
+        }); 
+    }
 }
 
 function onError(ex) {
-    console.log("error getting resource: " + JSON.stringify(ex));
+    console.log("error getting resource: " + JSON.stringify(ex.stack));
 }
