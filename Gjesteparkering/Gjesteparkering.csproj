@@ -157,18 +157,17 @@
     <Content Include="Scripts\Gjesteparkering\Login\reducer.js" />
     <Content Include="Scripts\Gjesteparkering\Login\utils.js" />
     <Content Include="Scripts\Gjesteparkering\Login\container.js" />
-    <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\actions.js" />
-    <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\container.js" />
-    <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\reducer.js" />
-    <Content Include="Scripts\Gjesteparkering\reducer.js" />
+    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\actions.js" />
+    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\container.js" />
+    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\reducer.js" />
     <Content Include="Scripts\Gjesteparkering\Shared\api\api.js" />
     <Content Include="Scripts\Gjesteparkering\Shared\api\actions.js" />
     <Content Include="Scripts\Gjesteparkering\Signup\container.js" />
     <Content Include="Scripts\rootReducer.js" />
+    <Content Include="Scripts\Gjesteparkering\Login\session.js" />
     <Content Include="Scripts\stateSelectors.js" />
-    <Content Include="Scripts\ReduxExample\components\view.jsx" />
-    <Content Include="Scripts\Gjesteparkering\app.jsx" />
-    <Content Include="Scripts\Gjesteparkering\App\Parkeringsplass\registrer.jsx" />
+    <Content Include="Scripts\Gjesteparkering\layout.jsx" />
+    <Content Include="Scripts\Gjesteparkering\Parkeringsplass\registrer.jsx" />
     <Content Include="readme.txt" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -177,7 +176,6 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Scripts\Gjesteparkering\Login\login.jsx" />
     <Content Include="Scripts\Gjesteparkering\Signup\signup.jsx" />
-    <Content Include="Scripts\Gjesteparkering\App\app.jsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -189,10 +187,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\init.jsx" />
-    <Content Include="Scripts\ReduxExample\actions\actions.js" />
     <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\ReduxExample\containers\container.js" />
-    <Content Include="Scripts\ReduxExample\reducers\reducers.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -201,9 +196,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Models\LogoutModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\AccountStatusModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,7 +223,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

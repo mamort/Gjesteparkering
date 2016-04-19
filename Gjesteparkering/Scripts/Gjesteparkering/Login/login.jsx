@@ -4,11 +4,17 @@ import Constants from '../constants'
 
 import { connect } from 'react-redux';
 
-const Login = ({ onEmailChange, onPasswordChange, onLogin }) => (
+const Login = ({ props, onEmailChange, onPasswordChange, onLogin }) => (
    
             <div>
                 <div className="login">
                   <h1>Logg inn <span className='signup'>eller <Link to={Constants.RoutePrefix + 'Registrer-deg'}>Registrer deg</Link></span></h1>
+
+
+                  {
+                      props.isWrongUsernameOrPass ?
+                      <div className='login-error'>Feil brukernavn eller passord.</div> : ""
+                  }
 
                   <form>
                     <fieldset>
@@ -39,7 +45,8 @@ const Login = ({ onEmailChange, onPasswordChange, onLogin }) => (
                       </div>
 
                     </fieldset>
-          
+
+                             
                     <fieldset className="buttons">
                         <div className="field">
                             <input id="signin-button" type="button" className="signin-btn" value="Logg inn" onClick={onLogin} />

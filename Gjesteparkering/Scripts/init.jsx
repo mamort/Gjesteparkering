@@ -3,11 +3,10 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose  } from 'redux'
 import thunk from 'redux-thunk'
-import GjesteparkeringApp from './Gjesteparkering/app.jsx'
-import RegistrerParkeringsplassPage from './Gjesteparkering/App/Parkeringsplass/container'
+import Layout from './Gjesteparkering/layout.jsx'
+import RegistrerParkeringsplassPage from './Gjesteparkering/Parkeringsplass/container'
 import LoginPage from './Gjesteparkering/Login/container'
 import SignupPage from './Gjesteparkering/Signup/container'
-import AppPage from './Gjesteparkering/App/app.jsx'
 import { loginHandler } from './Gjesteparkering/Login/utils'
 import rootReducer from './rootReducer'
 
@@ -30,7 +29,7 @@ const view = function () {
             <Router history={history}> 
                 <Route path='/Gjesteparkering/Logg-inn' component={LoginPage}/> 
                 <Route path='/Gjesteparkering/Registrer-deg' component={SignupPage}/>
-                <Route path='/Gjesteparkering' component={GjesteparkeringApp}>
+                <Route path='/Gjesteparkering' component={Layout}>
                     <Route path='Registrer-parkeringsplass' component={RegistrerParkeringsplassPage}/>                  
                 </Route>      
              </Router>

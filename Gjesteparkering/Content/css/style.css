@@ -26,7 +26,12 @@ fieldset {
 }
 
 a:hover {
-    text-decoration:underline
+    text-decoration: underline;
+    cursor:pointer
+}
+
+.clearfix {
+    clear: both;
 }
 
 #root {
@@ -70,4 +75,20 @@ a:hover {
     display: block;
 }
 
+.login-error {
+    color: #cc0000;
+    margin-top:1em;
+    margin-bottom: 1em;
+}
+
 /* Signup */
+
+
+/* Menu */
+.menu-links {
+    float: left;
+}
+
+.menu-logout {
+    float: right;
+}

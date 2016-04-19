@@ -59,7 +59,8 @@ function scripts(watch) {
         cache: {}, // required for watchify
         packageCache: {}, // required for watchify
         fullPaths: watch, // required to be true only for watchify
-        extensions: ['.js', '.json', '.es6', 'jsx']
+        extensions: ['.js', '.json', '.es6', 'jsx'],
+        poll: true
     };
 
     var bundler = createBundler(watch, options);

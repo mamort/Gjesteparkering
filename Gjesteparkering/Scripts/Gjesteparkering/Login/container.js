@@ -4,7 +4,9 @@ import { loginEmailChanged, loginPasswordChanged, login } from './actions'
 
 const mapStateToProps = (state) => {
     return {
-        
+        props: {
+            isWrongUsernameOrPass: state.login.loginFailed
+        }
     }
 }
 
