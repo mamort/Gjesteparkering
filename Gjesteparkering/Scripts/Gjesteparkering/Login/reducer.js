@@ -17,15 +17,15 @@ export const loginReducer = (state = {}, action) => {
         case LoginActionTypes.LOGIN_PASSWORD_CHANGED:
             return Object.assign({}, state, {password: action.password});
         case LoginActionTypes.USER_LOGGED_IN:
-            return Object.assign({}, state, {isLoggedIn: true});
+            return Object.assign({}, state, {isLoggedIn: true, password: ''});
         case LoginActionTypes.USER_LOGGED_OUT:
-            return Object.assign({}, state, {isLoggedIn: false});
+            return Object.assign({}, state, {isLoggedIn: false, email: '', password: ''});
         case LoginActionTypes.USER_LOGIN_FAILED:
-            return Object.assign({}, state, {isLoggedIn: false, loginFailed: true});
+            return Object.assign({}, state, {isLoggedIn: false, loginFailed: true, email: '', password: ''});
         case LoginActionTypes.USER_LOGOUT_FAILED:
-            return Object.assign({}, state, {logoutFailed: true});
+            return Object.assign({}, state, {logoutFailed: true, email: '', password: ''});
         case LoginActionTypes.API_SESSION_TIMEOUT:
-            return Object.assign({}, state, {isLoggedIn: false});
+            return Object.assign({}, state, {isLoggedIn: fals, email: '', password: ''});
         default:
             return state;
     }

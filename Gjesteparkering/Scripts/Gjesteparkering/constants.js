@@ -1,6 +1,6 @@
 export default {
     RoutePrefix: '/Gjesteparkering/',
-    ServiceUrl: 'http://localhost/Gjesteparkering/api',
+    ServiceUrl: 'http://Gjesteparkering/api',
     LoginSessionKey: 'gjesteparkering.isLoggedIn',
     LoginSessionUserKey: 'gjesteparkering.user'
 }
