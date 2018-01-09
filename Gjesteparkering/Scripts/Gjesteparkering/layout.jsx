@@ -35,11 +35,9 @@ class App extends Component {
     }
 }
 
-export default App
-
 const mapStateToProps = (state) => {
     return {
-        
+
     }
 }
 
